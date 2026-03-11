@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QikPOST Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f7;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            color: #007AFF;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            font-size: 1.8em;
+        }
+        
+        .section h3 {
+            color: #333;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .section ul, .section ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .section li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #007AFF;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #007AFF;
+        }
+        
+        .feature-card h4 {
+            color: #007AFF;
+            margin-bottom: 10px;
+        }
+        
+        .contact-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #007AFF;
+        }
+        
+        .contact-box a {
+            color: #007AFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .example-code {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #34C759;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .example-code pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 QikPOST</h1>
+            <p>Support & Documentation</p>
+        </header>
+
+        <!-- Getting Started -->
+        <div class="section">
+            <h2>🚀 Getting Started</h2>
+            
+            <h3>Creating Your First Button</h3>
+            <ol>
+                <li>Tap the <strong>☰</strong> menu in the top-right corner</li>
+                <li>Select <strong>"Add Button"</strong></li>
+                <li>Authenticate with Face ID/Touch ID</li>
+                <li>Configure your button:
+                    <ul>
+                        <li><strong>Button Title:</strong> A friendly name (e.g., "Turn on Lights")</li>
+                        <li><strong>URL:</strong> The API endpoint</li>
+                        <li><strong>Headers:</strong> Add required headers (Content-Type, Authorization, etc.)</li>
+                        <li><strong>Body:</strong> Your JSON payload</li>
+                    </ul>
+                </li>
+                <li>Tap <strong>"Save"</strong></li>
+            </ol>
+
+            <h3>Example Configuration</h3>
+            <div class="example-code">
+                <pre><strong>Button Title:</strong> Test API Call
+<strong>URL:</strong> https://api.example.com/endpoint
+
+<strong>Headers:</strong>
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN
+
+<strong>Body:</strong>
+{
+    "action": "trigger",
+    "device": "living_room_light",
+    "state": "on"
+}</pre>
+            </div>
+        </div>
+
+        <!-- Features Guide -->
+        <div class="section">
+            <h2>✨ Features Guide</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🎨 Custom Colors</h4>
+                    <p>Choose from 12 color swatches to organize and categorize your buttons visually.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔐 OTP/TOTP Support</h4>
+                    <p>Generate time-based one-time passwords automatically with each request. Perfect for 2FA APIs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>👆 Biometric Security</h4>
+                    <p>Protect sensitive buttons with Face ID or Touch ID authentication before execution.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>✅ Confirmation Prompts</h4>
+                    <p>Add a confirmation dialog before sending important or destructive requests.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📄 Multiple Pages</h4>
+                    <p>Organize buttons into separate pages (e.g., Home, Work, Servers).</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📏 Adjustable Spacers</h4>
+                    <p>Add visual spacing between button groups with customizable heights (5-80pt).</p>
+                </div>
+            </div>
+
+            <h3>Using OTP/TOTP</h3>
+            <ol>
+                <li>In button settings, enable <strong>"Use OTP"</strong></li>
+                <li>Enter your TOTP secret key (Base32 encoded)</li>
+                <li>The 6-digit OTP will be automatically generated and included in your request body</li>
+                <li>Reference it in your body with <code>{{OTP}}</code></li>
+            </ol>
+
+            <h3>Using Secrets Manager</h3>
+            <ol>
+                <li>Go to menu ☰ → <strong>"Secrets"</strong></li>
+                <li>Add your secrets (API keys, tokens, etc.)</li>
+                <li>In your button configuration, use placeholders like <code>{{MY_API_KEY}}</code></li>
+                <li>Secrets are securely stored and never included in backups</li>
+            </ol>
+
+            <h3>Pages & Organization</h3>
+            <ol>
+                <li>Go to menu ☰ → <strong>"Manage Pages"</strong></li>
+                <li>Create new pages with custom names and icons</li>
+                <li>Set a default page to load on app start</li>
+                <li>Switch between pages using the dropdown in the navigation bar</li>
+            </ol>
+
+            <h3>Reordering & Spacers</h3>
+            <ol>
+                <li>Go to menu ☰ → <strong>"Reorder Buttons"</strong></li>
+                <li>Drag buttons to rearrange them</li>
+                <li>Tap <strong>"Add Spacer"</strong> to insert gaps between buttons</li>
+                <li>Tap any spacer to adjust its height (5-80pt)</li>
+                <li>Swipe left on spacers or buttons to delete them</li>
+            </ol>
+        </div>
+
+        <!-- FAQ -->
+        <div class="section">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Is my data stored in the cloud?</div>
+                <div class="faq-answer">No. All data is stored locally on your device. Nothing is sent to external servers except the HTTP requests you explicitly configure.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Are my secrets safe in backups?</div>
+                <div class="faq-answer">Raw secret values are automatically excluded from backup files. Only placeholder references (e.g., <code>{{MY_SECRET}}</code>) are included. You'll need to manually re-enter secrets after restoring a backup.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I use GET, PUT, or DELETE requests?</div>
+                <div class="faq-answer">Currently, QikPOST only supports POST requests. This is by design to focus on action-oriented commands and automation triggers.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I troubleshoot failed requests?</div>
+                <div class="faq-answer">Enable "Show Response" in button settings to see the full API response. Check for authentication errors, incorrect URLs, missing headers, or malformed JSON in the body.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I export/import my configuration?</div>
+                <div class="faq-answer">Yes! Use menu ☰ → "Backup Config" to export a JSON file. Use "Restore Config" to import it on another device or after reinstalling the app.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: What's the difference between confirmation prompts and biometric auth?</div>
+                <div class="faq-answer">
+                    <strong>Confirmation prompts</strong> show a dialog asking "are you sure?" before sending.<br>
+                    <strong>Biometric auth</strong> requires Face ID/Touch ID to unlock the button before it can be tapped.<br>
+                    You can enable both for maximum security.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I set up OTP/TOTP?</div>
+                <div class="faq-answer">You need the Base32-encoded secret key from your 2FA setup (usually provided when setting up Google Authenticator or similar apps). Enable "Use OTP" in button settings and paste the secret. The app will generate a new 6-digit code every 30 seconds.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I edit a button after creating it?</div>
+                <div class="faq-answer">Yes! Swipe left on any button and tap "Edit" (requires authentication).</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: What happens if I delete a page?</div>
+                <div class="faq-answer">All buttons on that page will also be deleted. This action cannot be undone, so make sure to backup your configuration first!</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Why do I need to authenticate so often?</div>
+                <div class="faq-answer">QikPOST prioritizes security. Authentication is required for sensitive operations like adding/editing buttons, managing secrets, and accessing backups. Individual buttons can also require authentication if you enable it in their settings.</div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="section">
+            <h2>🔧 Troubleshooting</h2>
+            
+            <h3>Common Issues</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Request fails with "Authentication Failed"</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Check that your Authorization header is correct</li>
+                        <li>Verify your API token hasn't expired</li>
+                        <li>Make sure secrets are properly configured if using placeholders</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Request fails with "Invalid JSON"</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Validate your JSON body using a JSON validator</li>
+                        <li>Ensure all quotes are properly closed</li>
+                        <li>Check for trailing commas (not allowed in JSON)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">OTP not working</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Verify your secret key is Base32 encoded (not Base64 or hex)</li>
+                        <li>Check that your device time is correct (TOTP is time-sensitive)</li>
+                        <li>Make sure you're using <code>{{OTP}}</code> in your request body</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Response not showing</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Check that "Show Response" is enabled in button settings</li>
+                        <li>If auto-dismiss is too fast, increase the timeout value</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy & Security -->
+        <div class="section">
+            <h2>🔒 Privacy & Security</h2>
+            
+            <h3>Data Storage</h3>
+            <p>All data is stored locally on your device using iOS secure storage (UserDefaults). No data is transmitted to third-party servers except the HTTP requests you explicitly configure.</p>
+
+            <h3>Secrets Management</h3>
+            <p>Secrets are stored separately from button configurations. When exporting backups, raw secret values are automatically excluded to prevent accidental exposure.</p>
+
+            <h3>Authentication</h3>
+            <p>QikPOST uses iOS biometric authentication (Face ID/Touch ID) to protect sensitive operations. This happens locally on your device and never leaves it.</p>
+
+            <h3>Network Security</h3>
+            <p>We recommend always using HTTPS endpoints when possible to ensure your requests are encrypted in transit.</p>
+        </div>
+
+        <!-- Contact & Support -->
+        <div class="section">
+            <h2>📧 Contact & Support</h2>
+            
+            <div class="contact-box">
+                <p style="margin-bottom: 15px;">Need help? Have feedback or feature requests?</p>
+                <p><a href="mailto:support@qikpost.app">support@qikpost.app</a></p>
+            </div>
+
+            <h3 style="margin-top: 30px;">App Information</h3>
+            <p><strong>Developer:</strong> Barry</p>
+            <p><strong>Platform:</strong> iOS (iPhone)</p>
+            <p><strong>Category:</strong> Developer Tools / Utilities</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 QikPOST. All rights reserved.</p>
+        <p>Made with ❤️ for automation enthusiasts</p>
+    </footer>
+</body>
+</html>

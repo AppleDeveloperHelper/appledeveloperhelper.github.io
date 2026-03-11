@@ -1,6 +1,6 @@
 # Privacy Policy for QikPOST
 
-**Last updated: March 08, 2026**
+**Last updated: March 11, 2026**
 
 ---
 
@@ -52,7 +52,7 @@ Because QikPOST does not collect, store, or process any personal data, the follo
 
 **Australia (Privacy Act)** — No personal information is collected or held by the developer.
 
-If you believe that your use of the app somehow involves personal data specific to your jurisdiction, please contact us and we will respond promptly.
+[//]: # If you believe that your use of the app somehow involves personal data specific to your jurisdiction, please contact us and we will respond promptly.
 
 ## Children's Privacy
 
@@ -62,7 +62,7 @@ QikPOST does not collect data from anyone, including children under the age of 1
 
 If the app is updated in a way that changes how data is handled, this policy will be updated and the new date reflected at the top.
 
-## Contact
+[//]: # ## Contact
 
-If you have any questions about this privacy policy, please contact: **[your contact email]**
+[//]: # If you have any questions about this privacy policy, please contact: **[your contact email]**
 

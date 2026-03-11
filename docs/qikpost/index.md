@@ -1,3 +1,8 @@
+<style>
+  .page-header { display: none !important; }
+  .main-content { padding-top: 2rem; }
+</style>
+
 # Privacy Policy for QikPOST
 
 **Last updated: March 06, 2026**

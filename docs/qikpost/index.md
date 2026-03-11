@@ -1,11 +1,13 @@
 <style>
-  .page-header { display: none !important; }
-  .main-content { padding-top: 2rem; }
+  /* Hide everything that isn't your actual policy text */
+  h1 a[href*="github.io"] { 
+    display: none !important; 
+  }
 </style>
 
 # Privacy Policy for QikPOST
 
-**Last updated: March 05, 2026**
+**Last updated: March 09, 2026**
 
 ---
 

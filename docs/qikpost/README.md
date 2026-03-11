@@ -3,7 +3,7 @@ layout: null
 ---
 # Privacy Policy for QikPOST
 
-**Last updated: March 11, 2026**
+**Last updated: March 07, 2026**
 
 ---
 

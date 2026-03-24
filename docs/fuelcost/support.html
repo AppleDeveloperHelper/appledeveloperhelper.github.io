@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Fuel Cost Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #F7F5F0;
+      --surface:   #FFFFFF;
+      --ink:       #1A1814;
+      --muted:     #7A7672;
+      --accent:    #2A5EFF;
+      --accent-lt: #EEF2FF;
+      --border:    #E8E4DC;
+      --radius:    12px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 48px 24px 80px;
+    }
+
+    .wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      background: var(--accent);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(42,94,255,0.25);
+    }
+
+    .icon svg { width: 28px; height: 28px; fill: #fff; }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    h1 span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
+
+    details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    details[open] { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+    details + details { border-top-left-radius: 4px; border-top-right-radius: 4px; }
+
+    summary {
+      padding: 18px 20px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after { transform: rotate(45deg); }
+
+    .answer {
+      padding: 0 20px 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    /* Contact card */
+    .contact {
+      background: var(--accent-lt);
+      border: 1px solid #C7D4FF;
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg { width: 20px; height: 20px; fill: #fff; }
+
+    .contact h2 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .contact p { font-size: 0.88rem; color: var(--muted); margin-bottom: 14px; }
+
+    .contact a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+
+    .contact a:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    footer {
+      margin-top: 56px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="icon">
+        <!-- Fuel pump icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v7h1a2 2 0 0 1 2 2v4a1 1 0 0 0 2 0v-7l-2-2 1.4-1.4 3.6 3.6V20a3 3 0 0 1-6 0v-4h-1v6H3zm4-10h6V6H7v6z"/>
+        </svg>
+      </div>
+      <h1>
+        <span>Support</span>
+        Fuel Cost Calculator
+      </h1>
+    </header>
+
+    <!-- FAQ -->
+    <div class="faq">
+
+      <details>
+        <summary>How is the fuel cost calculated?</summary>
+        <div class="answer">
+          Enter your car's fuel efficiency, the current fuel price, and your trip distance. The app converts everything to a common unit internally (litres per 100 km) and multiplies by the fuel price to give you an estimated total cost.
+        </div>
+      </details>
+
+      <details>
+        <summary>Which units are supported?</summary>
+        <div class="answer">
+          Efficiency: Miles per UK gallon, Miles per US gallon, or Litres per 100 km.<br>
+          Fuel price: Pence per litre, Cents per litre, or Dollars per litre.<br>
+          Distance: Miles or Kilometres.
+        </div>
+      </details>
+
+      <details>
+        <summary>Does the app save my inputs?</summary>
+        <div class="answer">
+          Yes. Your last-used values and unit selections are saved locally on your device so you don't have to re-enter them every time. Nothing is ever sent off your device.
+        </div>
+      </details>
+
+      <details>
+        <summary>Does the app collect any data?</summary>
+        <div class="answer">
+          No. The app has no analytics, no tracking, no ads, and no internet connection. Everything stays on your device.
+        </div>
+      </details>
+
+      <details>
+        <summary>Why does the result disappear when I change a value?</summary>
+        <div class="answer">
+          The result clears automatically whenever you change any input, so you're never looking at a stale figure. Just tap Calculate again once you're happy with your values.
+        </div>
+      </details>
+
+      <details>
+        <summary>I'm seeing "Invalid Input" — what does that mean?</summary>
+        <div class="answer">
+          Each field must contain a number greater than zero. Check that you haven't left a field empty or accidentally entered letters. The app will highlight which field needs attention.
+        </div>
+      </details>
+
+    </div>
+
+    <!-- Contact -->
+    <div class="contact">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </div>
+      <div>
+        <h2>Still need help?</h2>
+        <p>Can't find what you're looking for? Get in touch and we'll get back to you as soon as possible.</p>
+        <a href="mailto:support@example.com">Send a message</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 The Developer &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

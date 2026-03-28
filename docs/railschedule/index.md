@@ -1,3 +1,9 @@
+<style>
+  /* Hide everything that isn't your actual policy text */
+  h1 a[href*="github.io"] { 
+    display: none !important; 
+  }
+</style>
 # Privacy Policy — Rail Live Schedule
 
 **Last updated: March 2026**

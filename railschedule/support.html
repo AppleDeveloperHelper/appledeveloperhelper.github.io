@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rail Live Schedule — Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f0f1a;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: #12121f;
+            border-bottom: 1px solid #2a2a3a;
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .app-icon {
+            font-size: 56px;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        header p {
+            color: #888;
+            font-size: 15px;
+            margin-top: 6px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ff9f1c;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #2a2a3a;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 20px 0 8px;
+        }
+
+        p {
+            color: #b0b0c0;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .faq-item {
+            background: #1a1a2e;
+            border: 1px solid #2a2a3a;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        .steps {
+            counter-reset: steps;
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps li {
+            counter-increment: steps;
+            display: flex;
+            gap: 14px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            color: #b0b0c0;
+        }
+
+        .steps li::before {
+            content: counter(steps);
+            background: #ff9f1c;
+            color: #000;
+            font-weight: 700;
+            font-size: 13px;
+            min-width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #2a2a3a;
+            color: #ff9f1c;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            font-family: monospace;
+        }
+
+        .contact-box {
+            background: #1a1a2e;
+            border: 1px solid #ff9f1c44;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin-bottom: 16px;
+        }
+
+        .contact-box a {
+            display: inline-block;
+            background: #ff9f1c;
+            color: #000;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 12px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            background: #ffb347;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px 20px;
+            border-top: 1px solid #2a2a3a;
+            color: #555;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #ff9f1c;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="app-icon">🚆</div>
+    <h1>Rail Live Schedule</h1>
+    <p>Live UK train departure information</p>
+</header>
+
+<div class="container">
+
+    <!-- Getting Started -->
+    <section>
+        <h2>Getting Started</h2>
+        <ol class="steps">
+            <li>Open the app. Tap the <strong>Presets</strong> button at the top of the screen to select or create a station.</li>
+            <li>Tap <strong>Stations</strong> (via the header area) to set your departure station and an optional destination filter.</li>
+            <li>Tap <strong>Done</strong> — live departures will load automatically.</li>
+            <li>Pull down on the list at any time to manually refresh.</li>
+        </ol>
+    </section>
+
+    <!-- Features -->
+    <section>
+        <h2>Features</h2>
+
+        <h3>Departure Board</h3>
+        <p>The main screen shows live departures from your chosen station. Each row displays the scheduled time, expected time, destination, and platform number. Trains shown in <strong style="color:#4caf50">green</strong> are on time. Delayed or cancelled trains are highlighted in <strong style="color:#f44336">red</strong>.</p>
+
+        <h3>Calling At Filter</h3>
+        <p>Set an optional destination station to show only trains that call at that stop. The arrival time at your destination will appear on each relevant row.</p>
+
+        <h3>Saved Presets</h3>
+        <p>Save your favourite station pairs as presets for quick switching. Tap the <strong>Presets</strong> button in the navigation bar to switch between them instantly. Swipe left on a preset to delete it, or drag to reorder.</p>
+
+        <h3>Auto Refresh</h3>
+        <p>Enable auto-refresh in Settings to update departures automatically every 60 seconds while the app is open. This can be turned off to save battery.</p>
+
+        <h3>Settings</h3>
+        <p>Accessible from the menu (top right). Allows you to configure:</p>
+        <p>
+            <span class="badge">Rows</span> Number of departures to show (up to 150)<br>
+            <span class="badge">Time Window</span> How far ahead to look (up to 8 hours)<br>
+            <span class="badge">Time Offset</span> Shift the start time forward or backward<br>
+            <span class="badge">Auto Refresh</span> Toggle automatic 60-second refresh
+        </p>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>Why are no departures showing?</h3>
+            <p>Check that your station CRS code is correct. If the board shows "No departures found", there may be no services running in the current time window — try increasing the Time Window in Settings.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>The departure times look wrong or outdated</h3>
+            <p>Pull down on the list to force a refresh. If the issue persists, check your internet connection. The "Updated" timestamp in the top right shows when data was last successfully retrieved.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I find a station's CRS code?</h3>
+            <p>Use the station search — tap the departure or destination station field and type the station name. The app searches over 2,570 UK stations and shows the CRS code alongside each result.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I see arrivals as well as departures?</h3>
+            <p>The app currently shows departures only. If you set a "Calling At" destination, the estimated arrival time at that station is shown on each row.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does the app use my location?</h3>
+            <p>No. The app never requests or uses your device location. Stations are selected manually by you.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does the app work offline?</h3>
+            <p>An internet connection is required to fetch live departure data. The app cannot display departure information without a connection to the Rail Data UK API.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What data does the app send or collect?</h3>
+            <p>Only the station codes you select are sent to the Rail Data UK API to retrieve departure information. No personal data, location, or device information is collected or stored by the developer. See our <a href="privacy-policy.md" style="color:#ff9f1c">Privacy Policy</a> for full details.</p>
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section>
+        <h2>Contact Support</h2>
+        <div class="contact-box">
+            <p>If you have a question not answered here, or have found a bug, please get in touch. We aim to respond within 2 business days.</p>
+            <a href="mailto:your-support-email@example.com">Email Support</a>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>Rail Live Schedule &copy; 2026 Barry &nbsp;|&nbsp; <a href="privacy-policy.md">Privacy Policy</a></p>
+    <p style="margin-top: 8px;">Data provided by Rail Data UK &amp; National Rail. Not affiliated with any train operating company.</p>
+</footer>
+
+</body>
+</html>
